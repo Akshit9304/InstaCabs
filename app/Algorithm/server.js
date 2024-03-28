@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const { findShortestPath } = require('/Users/akshit/blender-git/blender/gocabs/app/Algorithm/findShortestPath.js');
 
 const app = express();
+
+app.use(cors());
+
 const PORT = 3001;
+
 
 // Define the adjacency list for the graph
 const adjacencyList = {
@@ -15,11 +20,21 @@ const adjacencyList = {
 };
 
 // API endpoint for finding the shortest path and total time
+
+
 app.get('/api/shortest-path', (req, res) => {
-    const { start, end } = req.query;
-    const { path, time } = findShortestPath(adjacencyList, start, end);
-    res.json({ path, time });
-});
+    try {
+      // Your code to calculate the shortest path
+      const { start, end } = req.query;
+      const { path, time } = findShortestPath(adjacencyList, start, end);
+
+      res.json({ path, time });
+    } catch (error) {
+      console.error('Error calculating shortest path:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

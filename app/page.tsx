@@ -1,6 +1,6 @@
-import Image from "next/image";
+
 import Booking from "./components/Booking/Booking";
-import Graph from "./components/Map/Graphhh";
+
 import Map from "./components/Map/Map";
 
 export default function Home() {

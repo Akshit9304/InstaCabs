@@ -13,8 +13,12 @@ function Booking() {
 
     const locations = ['A', 'B', 'C', 'D', 'E', 'F'];
 
+    
+
     const handleBook = async () => {
         try {
+            console.log('Selected Start:', start);
+            console.log('Selected End:', end);
             const response = await fetch(`http://localhost:3001/api/shortest-path?start=${start}&end=${end}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
