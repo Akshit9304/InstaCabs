@@ -16,7 +16,7 @@ function Booking() {
     const [result, setResult] = useState('');
     const [car, setCar] = useState('')
 
-    const handlerFunction = (data) => {
+    const handlerFunction = (data: any) => {
         console.log(data)
         setCar(data)
     }
