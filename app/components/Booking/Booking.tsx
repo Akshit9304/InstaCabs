@@ -86,8 +86,10 @@ function Booking() {
                     <label htmlFor="enterName">Enter Name: </label>
                     <input id="enterName" className="border-[1px]" value={name} onChange={(e)=>setName(e.target.value)}/>
                     <br/>
-                    <label htmlFor="enterEmail">Enter Email: </label>
+                    <br/>
+                    <label htmlFor="enterEmail">Enter Email:    </label>
                     <input id="enterEmail" className="border-[1px]" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                    <br/>
                     <br/>
                     <label htmlFor="startSelect">Select start location:</label>
                     <select id="startSelect" value={start} onChange={(e) => setStart(e.target.value)}>
@@ -97,6 +99,7 @@ function Booking() {
                         ))}
                     </select>
                     <br />
+                    <br/>
                     <label htmlFor="endSelect">Select end location:</label>
                     <select id="endSelect" value={end} onChange={(e) => setEnd(e.target.value)}>
                         <option value="">Select...</option>
