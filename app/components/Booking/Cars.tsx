@@ -4,7 +4,7 @@ import CArlist from '@/app/data/CArlist'
 import Image from '@/node_modules/next/image'
 import React, { useState } from 'react'
 
-function Cars({HandlerFunction}) {
+function Cars({HandlerFunction} : {HandlerFunction: any}) {
     const [selectedcar, setSelectedCar]=useState<any>()
   return (
     <div className='mt-3'>
