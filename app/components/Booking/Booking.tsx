@@ -36,7 +36,7 @@ function Booking() {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            const data = await response.json();
+            const data : any = await response.json();
             // console.log(data)
             // console.log(car)
             const mess = `Shortest path: ${data.path.join(' -> ')}, Total time: ${data.time} min, Total Cost: ${data.time*carslist[car].charges}, Cab Type: ${carslist[car].name}` 
