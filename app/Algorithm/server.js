@@ -25,6 +25,7 @@ const adjacencyList = {
 app.get('/api/shortest-path', (req, res) => {
     try {
       // Your code to calculate the shortest path
+      console.log(req.query)
       const { start, end } = req.query;
       const { path, time } = findShortestPath(adjacencyList, start, end);
 

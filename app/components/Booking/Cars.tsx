@@ -4,7 +4,7 @@ import CArlist from '@/app/data/CArlist'
 import Image from '@/node_modules/next/image'
 import React, { useState } from 'react'
 
-function Cars() {
+function Cars({HandlerFunction}) {
     const [selectedcar, setSelectedCar]=useState<any>()
   return (
     <div className='mt-3'>
@@ -20,7 +20,10 @@ function Cars() {
                 ${index==selectedcar
                     ?'border-yellow-400 border-[2px]'
                     :null}`}
-                onClick={()=>setSelectedCar(index)}>
+                onClick={()=>{
+                    setSelectedCar(index)
+                    HandlerFunction(index)}
+                }>
                     <Image src={item.image}
                     alt={item.name }
                     width={75}
